@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} My blog {% endblock %}
+
+{% block content %}
+
+<h1 style="color: darkblue; text-align: center;"> Hello </h1>
+
+{% for post in posts %}
+<a href="{% url 'post-detail' slug=post.slug %}"><h1>{{ post.title }}</h1></a>
+<p>{{ post.content|slice:"150" }}....</p>
+<i style="text-align: left; font-style: italic; color: firebrick"><h5>{{ post.created }} </h5></i>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page=1">Birinchisi</a>
+            <a href="?page={{ posts.previous_page_number }}"Oldingi></a>
+        {% endif %}
+        <span class="current">
+            Sahifa {{ posts.number }}/{{ posts.paginator.num_pages }}
+        </span>
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">Keyingisi</a>
+            <a href="?page={{ posts.paginator.num_pages }}"Oxirgi></a>
+        {% endif %}
+
+    </span>
+
+</div>
+
+{% endblock %}
