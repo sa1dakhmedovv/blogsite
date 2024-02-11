@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
 {% block title %} {% endblock %}
 {% block content %}
+{% load static %}
 
 <h1>{{ post.title }}</h1>
 <p>{{ post.content }}</p>
 <i><h5>{{ post.created }}</h5></i>
 
+<hr>
+<h2 class="izoh">Izoh qoldirish</h2>
+<form method="post">
+    {% csrf_token %}
+    <label class="ism" for="author">Ism: </label>
+    <input class="isms" type="text" id="author" name="author" required><br><br>
+
+    <label class="comments" for="comment">Izoh:</label>
+    <textarea class="commentss" id="comment" name="text" rows="4" cols="50" required></textarea><br><br>
+
+    <button class="subm" type="submit">Yuborish</button>
+</form>
+
+
+<hr>
+{% for comment in comments %}
+    <div class="comment">
+        <p class="info">
+            <span class="cmnby"> Comment by {{ comment.author }}</span><br>
+            {{ comment.text }}</p><hr>
+        <p>{{ comment.body|linebreaks }}</p>
+    </div>
+{% empty %}
+    <p>Bu maqolada hozircha izoh qoldirilmagan</p>
+{% endfor %}
+
 {% endblock %}
+

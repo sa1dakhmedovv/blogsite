@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300;1,500&display=swap');
+
+.izoh {
+    font-family: 'Josefin Sans', sans-serif;
+    color: blue;
+}
+
+.ism {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+}
+.isms {
+    height: 20px;
+}
+
+.comments {
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.commentss {
+    width: 94%;
+    height: 20px;
+}
+
+.subm {
+    padding: 8px 30px 8px 30px;
+    font-size: 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+.cmnby {
+    font-size: 13px;
+}
+.info {
+    font-size: 20px;
+}
